@@ -1,0 +1,23 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karanlakhwani910/notes-app-nodejs.git"
+  },
+  "author": "Karan Lakhwani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karanlakhwani910/notes-app-nodejs/issues"
+  },
+  "homepage": "https://github.com/karanlakhwani910/notes-app-nodejs#readme",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "validator": "^13.6.0"
+  }
+}

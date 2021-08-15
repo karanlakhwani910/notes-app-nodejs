@@ -1,6 +1,7 @@
+const add = (a, b) =>{
+    return a + b;
+}
 
+// const name =  "Karan Lakhwani"
 
-
-
-// const name = "Karan"
-// module.exports = name
+module.exports = add
