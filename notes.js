@@ -15,12 +15,11 @@ const addNotes = (title, body) => {
             title: title,
             body : body
         })
-        console.log("New note added!");
+        console.log(chalk.green("New note added!"));
         saveNotes(notes);
     }else{
-        console.log("Note title taken!");
+        console.log(chalk.red("Note title taken!"));
     }
-    
 }
 const removeNote = (title) =>{
     const notes  = loadNotes();
@@ -35,6 +34,24 @@ const removeNote = (title) =>{
     }
     saveNotes(notesToKeep);
 }
+
+const listNotes = () => {
+    const notes = loadNotes();
+    console.log(chalk.green("Your notes..."));
+    notes.forEach(note => {
+        console.log(note.title);
+    });
+}
+
+const readNote = (title) => {
+    const notes = loadNotes();
+    notes.forEach(note => {
+        if(note.title === title){
+            console.log(note.body);
+        }
+    });
+}
+
 
 const saveNotes = (notes) => {
     const dataJSON = JSON.stringify(notes);
@@ -57,4 +74,6 @@ module.exports = {
     getNotes: getNotes,
     addNotes: addNotes,
     removeNote : removeNote,
+    listNotes :listNotes,
+    readNote : readNote
 }

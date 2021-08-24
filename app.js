@@ -7,52 +7,59 @@ yargs.version('1.1.0')
 // add, remove, read, list
 // add command
 yargs.command({
-    command:"add",
+    command: "add",
     describe: "Add a new note",
-    builder:{
-        title:{
-            describe : "Note title",
-            demandOption : true,
-            type : "string"
+    builder: {
+        title: {
+            describe: "Note title",
+            demandOption: true,
+            type: "string"
         },
-        body : {
-            describe : "Note body",
-            demandOption : true,
-            type : "string"
+        body: {
+            describe: "Note body",
+            demandOption: true,
+            type: "string"
         }
     },
-    handler: function(argv){
+    handler: (argv) => {
         notes.addNotes(argv.title, argv.body)
     }
 })
 
 yargs.command({
-    command:"remove",
+    command: "remove",
     describe: "Remove the command",
-    builder:{
-        title:{
-            describe : "Note title",
-            demandOption : true,
-            type : "string"
+    builder: {
+        title: {
+            describe: "Note title",
+            demandOption: true,
+            type: "string"
         }
     },
-    handler: function(argv){
+    handler: (argv) => {
         notes.removeNote(argv.title);
     }
 })
 
 yargs.command({
-    command:"read",
+    command: "read",
     describe: "Read a note",
-    handler: function(){
-        console.log("Reading a note!");
+    builder: {
+        title: {
+            describe: "Read note",
+            demandOption: true,
+            type: "string"
+        }
+    },
+    handler: (argv) => {
+        notes.readNote(argv.title);
     }
 })
 yargs.command({
-    command:"list",
+    command: "list",
     describe: "List notes",
-    handler: function(){
-        console.log("Listing notes!");
+    handler: () => {
+        notes.listNotes();
     }
 })
 
